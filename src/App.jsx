@@ -1,11 +1,16 @@
+import { useState } from 'react'
+import axios from 'axios'
 import { FaSearchLocation } from 'react-icons/fa'
 import Label from './components/Label'
 import Input from './components/Input'
 import Button from './components/Button'
+import Resultado from './components/Resultado'
 
 import './styles/main.scss'
 
 export default function App() {
+  const [showResult, setShowResult] = useState(false)
+
   return (
     <main className="container">
       <form className="search">
@@ -22,6 +27,8 @@ export default function App() {
           </Button>
         </div>
       </form>
+
+      {showResult ? <Resultado /> : null}
     </main>
   )
 }
