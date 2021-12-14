@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
 
-export default function Button({ type, children, classname }) {
+export default function Button({ type, children, classname, ...props }) {
   return (
-    <button className={classname} type={type}>
+    <button className={classname} type={type} {...props}>
       {children}
     </button>
   )
@@ -15,6 +15,6 @@ Button.defaultProps = {
 
 Button.propTypes = {
   type: PropTypes.string,
-  children: PropTypes.string.isRequired,
+  children: PropTypes.any.isRequired,
   classname: PropTypes.string,
 }

@@ -1,26 +1,32 @@
-export default function Resultado() {
+import PropTypes from 'prop-types'
+
+export default function Resultado({ endereco }) {
   return (
     <ul className="resultado">
       <li>
         <strong>CEP: </strong>
-        01001-000
+        {endereco.cep}
       </li>
       <li>
         <strong>Logradouro: </strong>
-        Praça da Sé
+        {endereco.logradouro}
       </li>
       <li>
         <strong>Complemento: </strong>
-        lado ímpar
+        {endereco.complemento}
       </li>
       <li>
         <strong>Bairro: </strong>
-        Sé
+        {endereco.bairro}
       </li>
       <li>
         <strong>Localidade: </strong>
-        São Paulo - SP
+        {endereco.localidade} - {endereco.uf}
       </li>
     </ul>
   )
+}
+
+Resultado.propTypes = {
+  endereco: PropTypes.object,
 }
